@@ -58,7 +58,7 @@ $ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GP
 [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
 ```
 
-8. (Optional) Install Python 3.9.2 using pyenv
+7. (Optional) Install Python 3.9.2 using pyenv
 
 I used Python 3.9.2 for the exam, so I had to use pyenv in Ubuntu to not change Ubuntu's default Python. As for you, you can use Python 3.10.* and have no problem.
 ```
