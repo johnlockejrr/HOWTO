@@ -41,7 +41,24 @@ $ sudo apt update
 $ sudo apt upgrade
 ```
 
-6. (Optional) Install Python 3.9.2 using pyenv
+6. Install Miniconda
+```
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+$ chmod +x Miniconda3-latest-Linux-x86_64.sh
+$ ./Miniconda3-latest-Linux-x86_64.sh
+$ rm -f Miniconda3-latest-Linux-x86_64.sh
+$ conda config --set auto_activate_base false
+$ conda create -n env python=3.10
+$ conda activate env
+$ pip install --upgrade pip
+$ pip install tensorflow==2.12.1
+$ export TF_CPP_MIN_LOG_LEVEL=2
+$ echo "export TF_CPP_MIN_LOG_LEVEL=2" >>~/.bashrc
+$ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+```
+
+8. (Optional) Install Python 3.9.2 using pyenv
 
 I used Python 3.9.2 for the exam, so I had to use pyenv in Ubuntu to not change Ubuntu's default Python. As for you, you can use Python 3.10.* and have no problem.
 ```
@@ -57,13 +74,13 @@ $ pyenv install 3.9.2
 $ pyenv global 3.9.2
 ```
 
-7. Install TensorFlow 2.13
+8. Install TensorFlow 2.13
 ```
 $ pip install --upgrade pip
 $ pip install tensorflow==2.13
 ```
 
-8. Verify the GPU Setup
+9. Verify the GPU Setup
 ```
 $ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
