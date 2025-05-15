@@ -53,7 +53,9 @@ $ conda activate env
 $ pip install --upgrade pip
 $ pip install tensorflow==2.12.1
 $ export TF_CPP_MIN_LOG_LEVEL=2
+$ echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >>~/.bashrc
 $ echo "export TF_CPP_MIN_LOG_LEVEL=2" >>~/.bashrc
+$ source ~/.bashrc
 $ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
 ```
